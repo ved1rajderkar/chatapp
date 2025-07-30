@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .chat-container {
+    @apply flex flex-col h-screen bg-chat-bg;
+  }
+  
+  .message-bubble {
+    @apply max-w-xs lg:max-w-md px-4 py-2 rounded-lg shadow-sm;
+  }
+  
+  .message-sent {
+    @apply bg-primary-500 text-white ml-auto;
+  }
+  
+  .message-received {
+    @apply bg-chat-received text-gray-800;
+  }
+  
+  .system-message {
+    @apply bg-gray-200 text-gray-600 text-center text-sm italic;
+  }
+  
+  .typing-indicator {
+    @apply flex items-center space-x-1 text-gray-500 text-sm italic;
+  }
+  
+  .typing-dot {
+    @apply w-2 h-2 bg-gray-400 rounded-full animate-pulse;
+  }
+  
+  .user-avatar {
+    @apply w-8 h-8 rounded-full object-cover;
+  }
+  
+  .sidebar-user {
+    @apply flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg transition-colors;
+  }
+  
+  .online-indicator {
+    @apply w-3 h-3 bg-green-500 rounded-full;
+  }
+  
+  .offline-indicator {
+    @apply w-3 h-3 bg-gray-400 rounded-full;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Message animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-animate {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+} 
