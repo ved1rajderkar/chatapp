@@ -11,7 +11,8 @@ const server = http.createServer(app);
 const allowedOrigins = [
   "https://vercel-prj_vPVa56bHESaJKKooSKA234KakIWF.vercel.app",
   "https://chatapp-one-zeta.vercel.app", 
-  "http://localhost:3000"
+  "http://localhost:3000",
+  "https://chatapp-uly9.onrender.com"
 ];
 
 const io = socketIo(server, {
