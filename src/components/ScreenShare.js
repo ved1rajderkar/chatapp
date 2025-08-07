@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = 'https://chatapp-uly9.onrender.com';
 
 // Create a browser-compatible Peer class
 const BrowserPeer = () => {

@@ -10,8 +10,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://chatapp-uly9.onrender.com",
-    methods: ["GET", "POST"]
+    origin: ["https://chatapp-one-zeta.vercel.app", "http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
