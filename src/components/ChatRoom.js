@@ -12,7 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 
-const SOCKET_URL = 'https://chatapp-uly9.onrender.com';
+const SOCKET_URL = process.env.REACT_APP_API_URL || 'https://chatapp-uly9.onrender.com';
 
 export default function ChatRoom({ user, onLogout, darkMode, onToggleDarkMode }) {
   const isMobile = useMediaQuery('(max-width:768px)');

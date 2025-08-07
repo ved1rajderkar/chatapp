@@ -8,9 +8,21 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 const server = http.createServer(app);
+const allowedOrigins = [
+  "https://vercel-prj_vPVa56bHESaJKKooSKA234KakIWF.vercel.app",
+  "https://chatapp-one-zeta.vercel.app", 
+  "http://localhost:3000"
+];
+
 const io = socketIo(server, {
   cors: {
-    origin: ["https://chatapp-one-zeta.vercel.app", "http://localhost:3000"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: ["GET", "POST"],
     credentials: true
   }
