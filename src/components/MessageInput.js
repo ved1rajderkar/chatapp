@@ -75,7 +75,7 @@ export default function MessageInput({ onSendMessage, disabled, onTypingStart, o
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <div className="flex items-center space-x-2 p-3 bg-white/30 dark:bg-gray-800/60 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 focus-within:ring-2 focus-within:ring-blue-400 transition-all duration-300">
       <button
         type="button"
         onClick={handleFileButtonClick}
@@ -110,6 +110,6 @@ export default function MessageInput({ onSendMessage, disabled, onTypingStart, o
       >
         Send
       </button>
-    </form>
+    </div>
   );
 } 

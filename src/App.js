@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ChatRoom from './components/ChatRoom';
 import LoginForm from './components/LoginForm';
 import UserProfile from './components/UserProfile';
+import ThreeDBackground from './components/ThreeDBackground';
 
 function App() {
   const [user, setUser] = useState(() => {
@@ -62,8 +63,9 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-200 ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className={`min-h-screen transition-colors duration-200 relative overflow-hidden ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+      <ThreeDBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10">
         {!user ? (
           <div className="flex items-center justify-center min-h-[80vh]">
             <LoginForm onLogin={handleLogin} />
@@ -80,23 +82,19 @@ function App() {
                   onToggleDarkMode={handleToggleDarkMode}
                   darkMode={darkMode}
                 />
-                
                 {/* Additional sidebar content can go here */}
               </div>
             </div>
-            
             {/* Main Content */}
             <div className="lg:col-span-3">
               <ChatRoom 
                 user={user} 
                 onLogout={handleLogout} 
                 darkMode={darkMode}
-
               />
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
