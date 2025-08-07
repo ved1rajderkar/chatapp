@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chatapp-uly9.onrender.com",
     methods: ["GET", "POST"]
   }
 });
